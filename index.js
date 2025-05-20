@@ -9,10 +9,11 @@ let cards = [];
 let clockInterval;
 const pokeapiPokemonCount = 1025
 
-function createCard(imageSrc, widthPercentage) {
+function createCard(imageSrc, widthPercentage, maxWidthPercentage) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = `${widthPercentage}%`;
+  card.style.maxWidth = `${maxWidthPercentage}vh`;
 
   const frontFace = document.createElement("img");
   frontFace.classList.add("front_face");
@@ -190,7 +191,7 @@ async function startGame(numCards, numPerRow, secondsAllowed) {
   cards = [];
 
   for (let i = 0; i < numCards; i++) {
-    const card = createCard(shuffledImages[i], 100 / numPerRow);
+    const card = createCard(shuffledImages[i], 100 / numPerRow, 60 / (numCards / numPerRow));
     document.getElementById("game_grid").appendChild(card.card);
     cards.push(card);
   }
