@@ -1,0 +1,166 @@
+:root {
+  --background-color: #efcbff;
+  --game-ui-bg: #dcb2ff;
+  --game-ui-border: #d495ff;
+  --button-bg: linear-gradient(90deg, #ca7bfe, #cc5fff);
+  --button-hover-bg: linear-gradient(110deg, #ca7bfe, #cc5fff);
+  --button-disabled-bg: linear-gradient(90deg, #e3d1f7, #f3e7fa);
+  --button-disabled-color: #a0a0a0;
+  --select-bg: linear-gradient(90deg, #f3e7fa, #e3d1f7);
+  --option-bg: #f3e7fa;
+  --select-border: #ca7bfe;
+  --select-focus-border: #cc5fff;
+  --select-focus-shadow: #cc5fff33;
+  --text-color: #5a2d82;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#game_ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px tomato solid;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: var(--game-ui-border) solid 10px;
+  background-color: var(--game-ui-bg);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#stats_ui {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#buttons_ui {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#buttons_ui > * {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+#stats_ui, #buttons_ui {
+  padding: .5em;
+  display: flex;
+}
+
+#game_grid {
+  width: 60%;
+  height: min-content;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  height: auto;
+  position: relative;
+  transition: transform 0.4s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.front_face,
+.back_face {
+  width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+.back_face {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.front_face {
+  transform: rotateY(180deg);
+}
+
+button {
+  background: var(--button-bg);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.4em;
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover, button:focus {
+  background: var(--button-hover-bg);
+  transform: scale(1.04);
+}
+
+button[disabled] {
+  background: var(--button-disabled-bg);
+  color: var(--button-disabled-color);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+select {
+  background: var(--select-bg);
+  color: var(--text-color);
+  border: 2px solid var(--select-border);
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(202,123,254,0.10);
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus {
+  border-color: var(--select-focus-border);
+  /* box-shadow: 0 0 0 2px var(--select-focus-shadow); */
+}
+
+select option {
+  background: var(--option-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode {
+  --background-color: #1e1e1e;
+  --game-ui-bg: #2c2c2c;
+  --game-ui-border: #444;
+  --button-bg: linear-gradient(90deg, #444, #666);
+  --button-hover-bg: linear-gradient(110deg, #444, #666);
+  --button-disabled-bg: linear-gradient(90deg, #333, #444);
+  --button-disabled-color: #777;
+  --select-bg: linear-gradient(90deg, #333, #444);
+  --option-bg: #444;
+  --select-border: #555;
+  --select-focus-border: #777;
+  --select-focus-shadow: #777333;
+  --text-color: #ddd;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- import jQuery -->
+  </head>
+  <body>
+    <div id="game_ui">
+      <div id="buttons_ui">
+        <select name="difficulty" id="difficulty_select">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+          <option value="expert">Expert</option>
+        </select>
+        <button id="start_game">Start Game</button>
+        <button id="reset_game" disabled>Reset Game</button>
+        <button id="toggle_theme">Theme</button>
+      </div>
+      <div id="stats_ui">
+        <div>
+          <h1>Clicks: <span id="clicks">?</span></h1>
+        </div>
+        <div>
+          <h1>Pairs matched: <span id="pairs_matched">?</span></h1>
+        </div>
+        <div>
+          <h1>Pairs left: <span id="pairs_left">?</span></h1>
+        </div>
+        <div>
+          <h1>Total pairs: <span id="total_pairs">?</span></h1>
+        </div>
+        <div>
+          <h1>Time left: <span id="timer">?</span></h1>
+        </div>
+      </div>
+    </div>
+    <div id="game_grid">
+      <h1>Press "Start Game" to play!</h1>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
