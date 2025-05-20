@@ -57,7 +57,8 @@ body {
 }
 
 #stats_ui, #buttons_ui {
-  padding: .5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
   display: flex;
 }
 
